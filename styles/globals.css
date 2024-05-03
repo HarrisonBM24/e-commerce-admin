@@ -50,3 +50,7 @@ table.basic a {
 .btn-default {
     @apply text-white bg-gray-500;
 }
+
+img {
+    max-height: 100%;
+}
