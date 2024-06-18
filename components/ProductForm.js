@@ -164,7 +164,6 @@ export default function ProductForm({
         )}
         <label className="flex flex-col items-center justify-center w-24 h-24 gap-1 text-sm text-center bg-white border rounded-sm shadow-sm cursor-pointer border-primary text-primary">
           <svg
-            justify-center
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
