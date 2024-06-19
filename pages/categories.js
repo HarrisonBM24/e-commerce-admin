@@ -59,11 +59,11 @@ function Categories({ swal }) {
   function deleteCategory(category) {
     swal
       .fire({
-        title: "Are you sure?",
-        text: `Do you want to delete ${category.name}?`,
+        title: "Estas seguro?",
+        text: `Realmente quieres eliminar ${category.name}?`,
         showCancelButton: true,
-        cancelButtonText: "Cancel",
-        confirmButtonText: "Yes, Delete!",
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Sí, Eliminar!",
         confirmButtonColor: "#d55",
       })
       .then(async (result) => {
@@ -107,11 +107,11 @@ function Categories({ swal }) {
 
   return (
     <Layout>
-      <h1>Categories</h1>
+      <h1>Categorias</h1>
       <label>
         {editedCategory
-          ? `Edit category ${editedCategory.name}`
-          : "Create new category"}
+          ? `Editar categoria ${editedCategory.name}`
+          : "Crear categoria"}
       </label>
       <form onSubmit={saveCategory}>
         <div className="flex gap-1">
@@ -119,13 +119,13 @@ function Categories({ swal }) {
             onChange={(ev) => setName(ev.target.value)}
             value={name}
             type="text"
-            placeholder={"Category name"}
+            placeholder={"Nombre de la categoria"}
           />
           <select
             onChange={(ev) => setParentCategory(ev.target.value)}
             value={parentCategory}
           >
-            <option value="">No parent category</option>
+            <option value="">Sin categoria padre</option>
             {categories.length > 0 &&
               categories.map((category) => (
                 <option key={category._id} value={category._id}>
@@ -141,7 +141,7 @@ function Categories({ swal }) {
             type="button"
             className="mb-2 text-sm btn-default"
           >
-            Add new property
+            Agregar propiedades
           </button>
           {properties.length > 0 &&
             properties.map((property, index) => (
@@ -153,7 +153,7 @@ function Categories({ swal }) {
                   onChange={(ev) =>
                     handlePropertyNameChange(property, index, ev.target.value)
                   }
-                  placeholder="property name (example: color)"
+                  placeholder="Nombre de la propiedad (ejemplo: color)"
                 />
                 <input
                   type="text"
@@ -162,21 +162,21 @@ function Categories({ swal }) {
                     handlePropertyValuesChange(property, index, ev.target.value)
                   }
                   value={property.values}
-                  placeholder="value, comma separated"
+                  placeholder="valores, separados por coma"
                 />
                 <button
                   onClick={() => removeProperty(index)}
                   className="btn-red"
                   type="button"
                 >
-                  Remove
+                  Remover
                 </button>
               </div>
             ))}
         </div>
         <div className="flex gap-1">
           <button type={"submit"} className="py-1 btn-primary">
-            Save
+            Guardar
           </button>
           {editedCategory && (
             <button
@@ -189,7 +189,7 @@ function Categories({ swal }) {
               }}
               className="btn-default"
             >
-              Cancel
+              Cancelar
             </button>
           )}
         </div>
@@ -198,8 +198,8 @@ function Categories({ swal }) {
         <table className="mt-4 basic">
           <thead>
             <tr>
-              <td>Category name</td>
-              <td>Parent category</td>
+              <td>Nombre de la Categoria</td>
+              <td>Categoria padre</td>
               <td></td>
             </tr>
           </thead>
@@ -229,7 +229,7 @@ function Categories({ swal }) {
                             d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
                           />
                         </svg>
-                        Edit
+                        Editar
                       </button>
                       <button
                         onClick={() => deleteCategory(category)}
@@ -249,7 +249,7 @@ function Categories({ swal }) {
                             d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5m6 4.125 2.25 2.25m0 0 2.25 2.25M12 13.875l2.25-2.25M12 13.875l-2.25 2.25M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
                           />
                         </svg>
-                        Delete
+                        Eliminar
                       </button>
                     </div>
                   </td>

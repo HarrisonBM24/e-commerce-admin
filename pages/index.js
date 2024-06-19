@@ -8,7 +8,7 @@ export default function Home() {
     <Layout>
       <div className="flex justify-between text-gray-800">
         <h2>
-          Hello, <b>{session?.user?.name}</b>
+          Bienvenido, <b>{session?.user?.name}</b>!
         </h2>
         <div className="flex overflow-hidden text-black bg-gray-300 rounded-lg">
           <img src={session?.user.image} className="w-6 h-6" />

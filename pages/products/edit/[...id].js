@@ -19,7 +19,7 @@ export default function EditProductPage() {
   }, [id]);
   return (
     <Layout>
-      <h1> Edit Product</h1>
+      <h1> Editar Producto</h1>
       {productInfo && <ProductForm {...productInfo} />}
     </Layout>
   );
